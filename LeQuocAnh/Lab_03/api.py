@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from Flask import Flask, request, jsonify
 from cipher.rsa import RSACipher
 from cipher.ecc import ECCCipher
 app = Flask(__name__)
