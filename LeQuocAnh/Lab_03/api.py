@@ -1,4 +1,4 @@
-from Flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
 from cipher.rsa import RSACipher
 from cipher.ecc import ECCCipher
 app = Flask(__name__)
@@ -7,8 +7,8 @@ app = Flask(__name__)
 rsa_cipher = RSACipher()
 
 @app.route("/api/rsa/generate_keys", methods=["GET"])
-def generate_keys():
-    keys = rsa_cipher.generate_keys()
+def rsa_generate_keys():
+    rsa_cipher.generate_keys()
     message = "Keys generated successfully"
     return jsonify({"message": message})
 
@@ -65,6 +65,7 @@ def rsa_verify():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+    
 # ECC CIPHER ALGORITHM
 ecc_cipher = ECCCipher()
 
