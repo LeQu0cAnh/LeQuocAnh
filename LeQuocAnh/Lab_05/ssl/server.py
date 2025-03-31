@@ -43,7 +43,7 @@ print("Server đang chờ kết nối...")
 
 while True:
     client_socket, client_address = server_socket.accept()
-    context = ssl.SSLContext(ssl.PROTOCOL TLS)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS)
     context.load_cert_chain(certfile = "./certificates/server-cert.crt",
     keyfile ="./certificates/server-key.key")
     ssl_socket = context.wrap_socket(client_socket, server_side=True)

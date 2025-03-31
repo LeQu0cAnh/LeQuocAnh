@@ -26,11 +26,14 @@ class Blockchain:
             else:
                 new_proof += 1
         return new_proof
-
+    # # nhập dữ liệu tĩnh
+    # def add_transaction(self, sender, receiver, amount):
+    #     self.current_transactions.append({'sender': sender, 'receiver': receiver, 'amount': amount})
+    #     return self.get_previous_block().index + 1
+    # Nhập dữ liệu động
     def add_transaction(self, sender, receiver, amount):
-        self.current_transactions.append({'sender': sender, 'receiver': receiver, 'amount': amount})
+        self.current_transactions.append({'Người gửi': sender, 'Người nhận': receiver, 'Số tiền': amount})
         return self.get_previous_block().index + 1
-
     def is_chain_valid(self, chain):
         previous_block = chain[0]
         block_index = 1
